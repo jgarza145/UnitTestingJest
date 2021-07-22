@@ -72,5 +72,19 @@ describe('My Stack', () =>{
         
     
     })
+
+    it('cant pop empty object, can pop single item', () =>{
+        stack.pop();
+        expect(stack.top).toBe(-1);
+        expect(stack.peek).toBe(undefined);
+
+        stack.push('🐐')
+        expect(stack.top).toBe(0);
+        expect(stack.peek).toBe('🐐');
+
+        stack.pop();
+        expect(stack.top).toBe(-1);
+        expect(stack.peek).toBe(undefined);
+    })
     
 })
